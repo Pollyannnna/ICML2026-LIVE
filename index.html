@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Figure Viewer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image-wrapper {
+            margin-bottom: 30px;
+            background: #2d2d2d;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            overflow: hidden;
+            padding: 20px;
+        }
+        .scroll-container {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            /* smooth scrolling */
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 5px;
+            cursor: grab;
+        }
+        .scroll-container:active {
+            cursor: grabbing;
+        }
+        .scroll-container img {
+            max-height: 450px; /* limits total height but preserves ratio */
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 6px;
+        }
+        /* Custom scrollbar for better appearance */
+        .scroll-container::-webkit-scrollbar {
+            height: 12px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #3c3c3c;
+            border-radius: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #777;
+            border-radius: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="1/epoch2-sample_rank10_batch0_strip.png" alt="Minecraft result 1">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="2/epoch2-sample_rank14_batch0_strip.png" alt="Minecraft result 2">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="2/epoch2-sample_rank54_batch0_strip.png" alt="Minecraft result 3">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="2/epoch2-sample_rank59_batch0_strip.png" alt="Minecraft result 4">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="2/sample_rank0_batch0_strip.png" alt="Minecraft result 5">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="3/epoch2-sample_rank19_batch0_strip.png" alt="Minecraft result 6">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="4/epoch2-sample_rank24_batch0_strip.png" alt="Minecraft result 7">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="5/epoch2-sample_rank41_batch0_strip.png" alt="Minecraft result 8">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="5/sample_rank20_batch0_strip.png" alt="Minecraft result 9">
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="scroll-container">
+                <img src="5/sample_rank41_batch0_strip.png" alt="Minecraft result 10">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script to enable drag to scroll -->
+    <script>
+        const sliders = document.querySelectorAll('.scroll-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        sliders.forEach(slider => {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>
