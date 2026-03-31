@@ -17,12 +17,21 @@
             margin: 0 auto;
         }
         .image-wrapper {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             background: #2d2d2d;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
             overflow: hidden;
             padding: 20px;
+        }
+        .caption {
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            color: #ddd;
+        }
+        .caption strong {
+            color: #fff;
         }
         .scroll-container {
             width: 100%;
@@ -37,7 +46,7 @@
             cursor: grabbing;
         }
         .scroll-container img {
-            max-height: 450px; /* limits total height but preserves ratio */
+            max-height: 450px;
             display: inline-block;
             vertical-align: top;
             border-radius: 6px;
@@ -63,62 +72,62 @@
     <div class="container">
 
         <div class="image-wrapper">
+            <div class="caption">
+                <strong>First row:</strong> Forward building blocks<br>
+                <strong>Second row:</strong> Backward recovering
+            </div>
             <div class="scroll-container">
                 <img src="1/epoch2-sample_rank10_batch0_strip.png" alt="Minecraft result 1">
             </div>
         </div>
 
         <div class="image-wrapper">
-            <div class="scroll-container">
-                <img src="2/epoch2-sample_rank14_batch0_strip.png" alt="Minecraft result 2">
+            <div class="caption">
+                <strong>First row:</strong> Forward chopping tree<br>
+                <strong>Second row:</strong> Backward recovering
             </div>
-        </div>
-
-        <div class="image-wrapper">
-            <div class="scroll-container">
-                <img src="2/epoch2-sample_rank54_batch0_strip.png" alt="Minecraft result 3">
-            </div>
-        </div>
-
-        <div class="image-wrapper">
             <div class="scroll-container">
                 <img src="2/epoch2-sample_rank59_batch0_strip.png" alt="Minecraft result 4">
             </div>
         </div>
 
         <div class="image-wrapper">
+            <div class="caption">
+                <strong>First row:</strong> Forward chopping tree<br>
+                <strong>Second row:</strong> Backward recovering
+            </div>
             <div class="scroll-container">
                 <img src="2/sample_rank0_batch0_strip.png" alt="Minecraft result 5">
             </div>
         </div>
 
         <div class="image-wrapper">
+            <div class="caption">
+                <strong>First row:</strong> Forward destroying dirt/grass block<br>
+                <strong>Second row:</strong> Backward recovering
+            </div>
             <div class="scroll-container">
                 <img src="3/epoch2-sample_rank19_batch0_strip.png" alt="Minecraft result 6">
             </div>
         </div>
 
         <div class="image-wrapper">
+            <div class="caption">
+                <strong>First row:</strong> Forward chopping tree<br>
+                <strong>Second row:</strong> Backward recovering
+            </div>
             <div class="scroll-container">
                 <img src="4/epoch2-sample_rank24_batch0_strip.png" alt="Minecraft result 7">
             </div>
         </div>
 
         <div class="image-wrapper">
+            <div class="caption">
+                <strong>First row:</strong> Forward mining<br>
+                <strong>Second row:</strong> Backward recovering
+            </div>
             <div class="scroll-container">
                 <img src="5/epoch2-sample_rank41_batch0_strip.png" alt="Minecraft result 8">
-            </div>
-        </div>
-
-        <div class="image-wrapper">
-            <div class="scroll-container">
-                <img src="5/sample_rank20_batch0_strip.png" alt="Minecraft result 9">
-            </div>
-        </div>
-
-        <div class="image-wrapper">
-            <div class="scroll-container">
-                <img src="5/sample_rank41_batch0_strip.png" alt="Minecraft result 10">
             </div>
         </div>
 
